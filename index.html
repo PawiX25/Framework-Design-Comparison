@@ -9,24 +9,40 @@
     <link rel="stylesheet" href="styles.css">
     
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" rel="stylesheet">
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+        <a class="navbar-brand" href="#">CSS Framework Comparison</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#bootstrap">Bootstrap</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tailwind">Tailwind CSS</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#bulma">Bulma</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
     <header>
         <h1>CSS Framework Design Comparison</h1>
         <p>Visual comparison of popular CSS frameworks like Bootstrap, Tailwind CSS, and Bulma.</p>
     </header>
 
     <main>
-        
-        <section class="framework-demo">
+        <section id="bootstrap" class="framework-demo">
             <h2>Bootstrap Design</h2>
             <div class="bootstrap-example">
-                
                 <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
                     <a class="navbar-brand" href="#">Bootstrap Navbar</a>
                 </nav>
@@ -115,11 +131,9 @@
             </div>
         </section>
 
-        
-        <section class="framework-demo">
+        <section id="tailwind" class="framework-demo">
             <h2>Tailwind CSS Design</h2>
             <div class="tailwind-example">
-                
                 <nav class="bg-gray-800 p-4 mb-4">
                     <a href="#" class="text-white font-bold">Tailwind Navbar</a>
                 </nav>
@@ -160,53 +174,64 @@
                     <div class="bg-gray-400 p-4">Tailwind Grid 3</div>
                 </div>
                 
-                <div class="tailwind-tabs mb-4">
-                    <button class="tab-button bg-blue-500 text-white py-2 px-4 rounded mr-2" data-target="#tailwind-tab1">Tailwind Tab 1</button>
-                    <button class="tab-button bg-blue-300 text-white py-2 px-4 rounded" data-target="#tailwind-tab2">Tailwind Tab 2</button>
+                <div class="mb-4">
+                    <ul class="flex border-b">
+                        <li class="-mb-px mr-1">
+                            <a class="bg-blue-500 text-white inline-block py-2 px-4 rounded-t" href="#tailwind-home">Home</a>
+                        </li>
+                        <li class="mr-1">
+                            <a class="text-blue-500 inline-block py-2 px-4 rounded-t hover:bg-blue-200" href="#tailwind-profile">Profile</a>
+                        </li>
+                    </ul>
+                    <div id="tailwind-home" class="bg-blue-100 p-4 mt-4">Tailwind Home Tab Content</div>
+                    <div id="tailwind-profile" class="bg-blue-200 p-4 mt-4 hidden">Tailwind Profile Tab Content</div>
                 </div>
-                <div id="tailwind-tab1" class="tab-content">Tailwind Tab 1 Content</div>
-                <div id="tailwind-tab2" class="tab-content hidden">Tailwind Tab 2 Content</div>
                 
                 <h3 class="text-2xl font-bold mb-4">Tailwind Typography</h3>
-                <p class="mb-4">This is a paragraph with Tailwind's default typography.</p>
+                <p class="mb-4">This is a paragraph styled with Tailwind's typography classes.</p>
                 
                 <div class="relative pt-1">
                     <div class="flex mb-2 items-center justify-between">
-                        <span class="text-xs font-semibold inline-block py-1 px-2 rounded-full text-teal-600 bg-teal-200">50%</span>
+                        <div class="text-xs font-semibold inline-block py-1 px-2 uppercase rounded-full text-teal-600 bg-teal-200">
+                            Progress
+                        </div>
                     </div>
                     <div class="flex">
-                        <div class="w-1/2 bg-teal-600 text-xs leading-none py-1 text-center text-white" style="width:50%">50%</div>
+                        <div class="relative w-full flex-1">
+                            <div class="flex h-2 mb-2 overflow-hidden text-xs bg-teal-200 rounded">
+                                <div style="width: 50%" class="flex flex-col text-center text-white bg-teal-500 shadow-none"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <span class="bg-blue-500 text-white text-xs font-semibold mr-2 px-2.5 py-0.5 rounded mb-4">Tailwind Badge</span>
+                <span class="inline-block bg-blue-500 text-white px-3 py-1 text-sm font-semibold rounded-full mb-4">Tailwind Badge</span>
                 
-                <table class="min-w-full divide-y divide-gray-200 mb-4">
+                <table class="table-auto w-full border-collapse border border-gray-200 mb-4">
                     <thead>
                         <tr>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">First</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Last</th>
-                            <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Handle</th>
+                            <th class="border border-gray-300 px-4 py-2">#</th>
+                            <th class="border border-gray-300 px-4 py-2">First</th>
+                            <th class="border border-gray-300 px-4 py-2">Last</th>
+                            <th class="border border-gray-300 px-4 py-2">Handle</th>
                         </tr>
                     </thead>
-                    <tbody class="bg-white divide-y divide-gray-200">
+                    <tbody>
                         <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">1</td>
-                            <td class="px-6 py-4 whitespace-nowrap">Mark</td>
-                            <td class="px-6 py-4 whitespace-nowrap">Otto</td>
-                            <td class="px-6 py-4 whitespace-nowrap">@mdo</td>
+                            <td class="border border-gray-300 px-4 py-2">1</td>
+                            <td class="border border-gray-300 px-4 py-2">Mark</td>
+                            <td class="border border-gray-300 px-4 py-2">Otto</td>
+                            <td class="border border-gray-300 px-4 py-2">@mdo</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </section>
 
-        
-        <section class="framework-demo">
+        <!-- Bulma Section -->
+        <section id="bulma" class="framework-demo">
             <h2>Bulma Design</h2>
             <div class="bulma-example">
-                
                 <nav class="navbar is-light mb-4">
                     <div class="navbar-brand">
                         <a class="navbar-item" href="#">Bulma Navbar</a>
@@ -223,13 +248,14 @@
                         <div class="media">
                             <div class="media-content">
                                 <p class="title is-4">Bulma Card</p>
+                                <p class="subtitle is-6">This card is styled with Bulma's default classes.</p>
                             </div>
                         </div>
-                        <div class="content">This card is built using Bulma's card component.</div>
+                        <div class="content">
+                            <a class="button is-primary">Bulma Button</a>
+                        </div>
                     </div>
                 </div>
-                
-                <button class="button is-success mb-4">Bulma Button</button>
                 
                 <input class="input mb-4" type="text" placeholder="Bulma Input">
                 
@@ -237,7 +263,9 @@
                     <div class="message-header">
                         <p>Bulma Alert</p>
                     </div>
-                    <div class="message-body">This is a Bulma alert—check it out!</div>
+                    <div class="message-body">
+                        This is a Bulma alert—check it out!
+                    </div>
                 </article>
                 
                 <button class="button is-info mb-4" id="openBulmaModal">Open Bulma Modal</button>
@@ -247,34 +275,35 @@
                         <div class="box">
                             <h2 class="title">Bulma Modal</h2>
                             <p>This is a Bulma modal.</p>
+                            <button class="button is-danger modal-close is-large" aria-label="close"></button>
                         </div>
                     </div>
                     <button class="modal-close is-large" aria-label="close"></button>
                 </div>
                 
                 <div class="columns mb-4">
-                    <div class="column is-one-third">Bulma Grid 1</div>
-                    <div class="column is-one-third">Bulma Grid 2</div>
-                    <div class="column is-one-third">Bulma Grid 3</div>
+                    <div class="column">Bulma Column 1</div>
+                    <div class="column">Bulma Column 2</div>
+                    <div class="column">Bulma Column 3</div>
                 </div>
                 
-                <div class="tabs mb-4 bulma-tabs">
+                <div class="tabs is-boxed mb-4">
                     <ul>
-                        <li class="is-active"><a href="#bulma-tab1">Bulma Tab 1</a></li>
-                        <li><a href="#bulma-tab2">Bulma Tab 2</a></li>
+                        <li class="is-active"><a href="#bulma-home">Home</a></li>
+                        <li><a href="#bulma-profile">Profile</a></li>
                     </ul>
                 </div>
-                <div id="bulma-tab1" class="tab-content">Bulma Tab 1 Content</div>
-                <div id="bulma-tab2" class="tab-content is-hidden">Bulma Tab 2 Content</div>
+                <div id="bulma-home" class="box">Bulma Home Tab Content</div>
+                <div id="bulma-profile" class="box is-hidden">Bulma Profile Tab Content</div>
                 
                 <h3 class="title is-3 mb-4">Bulma Typography</h3>
-                <p class="mb-4">This is a paragraph with Bulma's default typography.</p>
+                <p class="mb-4">This is a paragraph with Bulma's typography classes.</p>
                 
                 <progress class="progress is-primary mb-4" value="50" max="100">50%</progress>
                 
                 <span class="tag is-primary mb-4">Bulma Badge</span>
                 
-                <table class="table is-fullwidth mb-4">
+                <table class="table is-striped is-hoverable is-fullwidth mb-4">
                     <thead>
                         <tr>
                             <th>#</th>
@@ -300,14 +329,14 @@
         <p>Footer Content</p>
     </footer>
 
-    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bulma@0.9.3/js/bulma.min.js"></script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Tailwind Tabs
             const tailwindTabs = document.querySelectorAll('.tailwind-tabs .tab-button');
             tailwindTabs.forEach(tab => {
                 tab.addEventListener('click', function (e) {
@@ -322,6 +351,7 @@
                 });
             });
 
+            // Bulma Modal
             const bulmaModalOpenButton = document.getElementById('openBulmaModal');
             bulmaModalOpenButton.addEventListener('click', function () {
                 document.getElementById('bulmaModal').classList.add('is-active');
