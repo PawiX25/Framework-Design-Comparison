@@ -12,6 +12,12 @@ This project provides a visual comparison of three popular CSS frameworks: **Boo
 
 Check out the live demo of the project: [Live Demo](https://fdc.pawix.tech/)
 
+## Screenshot
+
+Here is a screenshot of the project:
+
+![Screenshot](https://github.com/user-attachments/assets/c11950ca-27bb-4430-9943-c2c5094357d5)
+
 ## Installation
 
 To run the project locally, clone the repository:
